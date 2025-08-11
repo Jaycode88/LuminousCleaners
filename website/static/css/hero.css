@@ -138,3 +138,176 @@
   margin-right: 50px;
   margin-top: 100px;
 }
+
+/* Hide call button by default */
+.call-btn {
+  display: none;
+  margin-top: 1rem;
+}
+
+/* ===== 1390px breakpoint ===== */
+@media (max-width: 1390px) {
+  /* Make sure the section itself doesn't fight our alignment */
+  .hero {
+    align-items: center; /* default center for other elements */
+  }
+
+  /* Overlay box: push to right with consistent anchor */
+  .hero-overlay {
+    align-self: flex-end;       /* push this flex child to the right */
+    max-width: 600px;           /* same width used earlier */
+    margin-right: 10%;          /* right anchor */
+    margin-left: 0;             /* avoid accidental re-centering */
+  }
+
+  /* Bottom blue text: match the overlay’s width & anchor so they align */
+  .hero-bottom-text {
+    align-self: flex-end;       /* push right like the overlay */
+    max-width: 600px;           /* match overlay width */
+    text-align: center;         /* keep the copy centered within the block */
+    margin-right: 5%;           /* match overlay right margin */
+    margin-left: 0;
+  }
+}
+
+/* ===== 1170px breakpoint ===== */
+@media (max-width: 1170px) {
+  .hero-overlay {
+    align-self: flex-end;
+    max-width: 550px;      
+    margin-right: 10%;
+    margin-left: 0;
+  }
+
+  .hero-bottom-text {
+    align-self: flex-end;
+    max-width: 550px;      
+    margin-left: 5%;
+    text-align: center;
+  }
+}
+
+/* ===== 1070px breakpoint ===== */
+@media (max-width: 1070px) {
+  .hero-overlay {
+    align-self: flex-end;
+    max-width: 520px;
+    margin-right: 8%;
+    margin-left: 0;
+    
+  }
+
+  .hero-bottom-text {
+    align-self: flex-end;
+    max-width: 520px;
+    margin-right: 4%;
+    margin-left: 0;
+    text-align: center;
+    margin-top: 2.25rem;
+  }
+}
+
+/* ===== 930px breakpoint ===== */
+@media (max-width: 930px) {
+  /* Overlay box: center it under the headings */
+  .hero-overlay {
+    align-self: center;
+    margin: 2rem auto 1rem auto; /* space above and below */
+    max-width: 600px;
+  }
+
+  /* Bottom text: stack under overlay with translucent background */
+  .hero-bottom-text {
+    align-self: center;
+    max-width: 600px;
+    margin-top: 10%;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.7); /* transparent white */
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+  }
+}
+
+/* ===== 768px breakpoint ===== */
+@media (max-width: 768px) {
+  .call-btn {
+    display: inline-block;
+    text-align: center;
+    margin-top: 10%;
+  }
+}
+
+/* ===== 660px breakpoint ===== */
+@media (max-width: 660px) {
+  .social-icons {
+    top: -20px;   /* move up */
+    right: -20px; /* move right */
+    margin-bottom: 5%;
+  }
+
+  /* Optional: shrink them slightly for smaller screens */
+  .social-icons a img {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* ===== 443px breakpoint ===== */
+@media (max-width: 443px) {
+  /* Center the heading when it wraps */
+  .hero-title {
+    text-align: center;
+    display: block; /* ensures text-align applies fully */
+    margin: 0 auto;
+    max-width: 90%; /* prevent it from hitting the edges */
+  }
+
+  /* Reduce spacing so content fits */
+  .hero-overlay {
+    margin-top: 10px; /* was 75px earlier */
+    padding: 1.5rem;
+  }
+
+  .hero-bottom-text {
+    margin-top: 1.5rem; /* tighten bottom text spacing */
+    padding: 0.75rem 1rem;
+  }
+
+  .call-btn {
+    margin-top: 0.75rem; /* tighter gap above call button */
+  }
+}
+
+
+
+/* ===== 330px breakpoint ===== */
+@media (max-width: 365px) {
+  /* Make overlay smaller */
+  .hero-overlay {
+    max-width: 90%;
+    padding: 1rem;
+  }
+
+  /* Bullet points smaller */
+  .hero-bullets li {
+    font-size: 0.95rem;
+  }
+
+  /* Buttons smaller */
+  .hero-buttons .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  /* Bottom text and call button adjustments */
+  .hero-bottom-text {
+    font-size: 0.95rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .call-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    margin-top: 10%;
+  }
+}
