@@ -1,0 +1,65 @@
+/* === About Section === */
+.about-section {
+  padding: 4rem 2rem;
+  background-color: #fff; /* plain background */
+  text-align: center;
+}
+
+.about-heading {
+  font-family: 'Raleway', sans-serif;
+  font-size: 2rem;
+  color: #07B0F2;
+  font-weight: 700;
+  text-decoration: underline;
+  margin-bottom: 2rem;
+}
+
+.about-card {
+  background-color: #07B0F2;
+  color: white;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-intro {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.about-body {
+  font-size: 1rem;
+  font-weight: normal;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.about-outro {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin: 2rem 0;
+}
+
+.about-btn {
+  display: inline-block;
+  background-color: white;
+  color: #07B0F2;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  transition: 0.3s ease;
+  margin-top: 1rem;
+}
+
+.about-btn:hover {
+  background-color: #f1f1f1;
+}
