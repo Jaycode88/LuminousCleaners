@@ -1,0 +1,95 @@
+/* === Gallery Section === */
+.gallery {
+  background: white;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+/* Heading */
+.gallery-heading {
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  color: #07B0F2;
+  text-decoration: underline;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Carousel container */
+.carousel {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 3px solid #07B0F2;
+}
+
+/* Track (images wrapper) */
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-track img {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+/* Buttons */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #07B0F2;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+/* Tagline */
+.gallery-tagline {
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: #07B0F2;
+  margin-bottom: 1.5rem;
+}
+
+/* Button */
+.gallery-btn {
+  background-color: #07B0F2;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.gallery-btn:hover {
+  background-color: #0596cd;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .gallery-heading {
+    font-size: 1.5rem;
+  }
+
+  .gallery-tagline {
+    font-size: 1rem;
+  }
+}

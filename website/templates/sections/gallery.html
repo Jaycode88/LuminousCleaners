@@ -1,0 +1,22 @@
+{% load static %}
+<section id="gallery" class="gallery">
+  <!-- Heading -->
+  <h2 class="gallery-heading">Gallery</h2>
+
+  <!-- Carousel -->
+  <div class="carousel">
+    <div class="carousel-track">
+      <img src="{% static 'img/herobackground.jpg' %}" alt="Gallery Image 1">
+      <img src="{% static 'img/services-bg.png' %}" alt="Gallery Image 2">
+      <img src="{% static 'img/herobackground.jpg' %}" alt="Gallery Image 3">
+    </div>
+    <button class="carousel-btn prev">&#10094;</button>
+    <button class="carousel-btn next">&#10095;</button>
+  </div>
+
+  <!-- Tagline -->
+  <p class="gallery-tagline">Quality results you can see and trust</p>
+
+  <!-- Call-to-action Button -->
+  <a href="#contact" class="btn gallery-btn">Get a Free Quote</a>
+</section>
