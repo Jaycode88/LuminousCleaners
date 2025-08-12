@@ -1,0 +1,75 @@
+.contact-section {
+  background-image: url('/static/img/contact-bg.png');
+  background-size: cover;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.contact-heading {
+  display: inline-block;
+  background-color: white;
+  border-radius: 8px;
+  padding: 0.5rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.contact-heading h2 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #07B0F2;
+  text-decoration: underline;
+  margin: 0;
+}
+
+.contact-card {
+  background: white;
+  border: 4px solid #07B0F2;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: left;
+}
+
+.contact-intro {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 1.5rem;
+}
+
+.contact-card input,
+.contact-card select,
+.contact-card textarea {
+  width: 100%;
+  border: 2px solid #07B0F2;
+  border-radius: 5px;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+
+.contact-terms {
+  font-size: 0.9rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.primary-btn {
+  background-color: #07B0F2;
+  color: white;
+}
+
+.secondary-btn {
+  background-color: white;
+  color: #07B0F2;
+  border: 2px solid #07B0F2;
+}

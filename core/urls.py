@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', website_views.home, name='home'),
     path('reviews/', include('reviews.urls')),
+    path('contact/', include('contact.urls')),
 ]
