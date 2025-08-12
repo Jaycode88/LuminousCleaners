@@ -1,0 +1,28 @@
+{% load static %}
+<section id="contact" class="contact-section">
+  <div class="contact-heading">
+    <h2>Contact Us</h2>
+  </div>
+
+  <div class="contact-card">
+    <p class="contact-intro">Please complete the form to receive your free quote</p>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      
+      <!-- reCAPTCHA -->
+      <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
+      
+      <p class="contact-terms">
+        By sending this message, you agree to our
+        <a href="#">Terms & Conditions</a> and
+        <a href="#">Privacy Policy</a>.
+      </p>
+      
+      <div class="contact-buttons">
+        <button type="submit" class="btn primary-btn">Send Form</button>
+        <button type="reset" class="btn secondary-btn">Clear Form</button>
+      </div>
+    </form>
+  </div>
+</section>
