@@ -12,10 +12,14 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# load .env
+load_dotenv(BASE_DIR / ".env")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
@@ -39,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'website',
+    'reviews',
 ]
 
 MIDDLEWARE = [
@@ -125,3 +130,16 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'website', 'static')]
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Google Places config
+GOOGLE_PLACES_API_KEY = os.getenv("GOOGLE_PLACES_API_KEY", "")
+GOOGLE_PLACE_ID = os.getenv("GOOGLE_PLACE_ID", "")
+GOOGLE_REVIEWS_CACHE_SECONDS = int(os.getenv("GOOGLE_REVIEWS_CACHE_SECONDS", "43200"))
+
+# Simple in-memory cache (good for dev; swap for Redis in prod if you like)
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
+        "LOCATION": "unique-reviews-cache",
+    }
+}

@@ -1,0 +1,57 @@
+<section id="reviews" class="reviews-section">
+  <h2 class="reviews-heading">Reviews</h2>
+
+  {% if error %}
+    <div class="reviews-error">
+      <p>We’re having trouble loading the latest Google reviews right now.</p>
+    </div>
+  {% else %}
+    <div class="reviews-summary">
+      <span class="stars">
+        {% with rating|default:0 as avg %}
+          {% for i in "12345" %}
+            {% if forloop.counter <= avg|floatformat:0 %}
+              ★
+            {% else %}
+              ☆
+            {% endif %}
+          {% endfor %}
+        {% endwith %}
+      </span>
+      <span class="rating-text">
+        {{ rating|default:0 }} / 5 ({{ total|default:0 }} reviews)
+      </span>
+      {% if business_url %}
+        <a href="{{ business_url }}" target="_blank" rel="noopener" class="reviews-link">View on Google</a>
+      {% endif %}
+    </div>
+
+    <div class="reviews-grid">
+      {% for r in reviews %}
+        <article class="review-card">
+          <div class="review-header">
+            {% if r.profile_photo_url %}
+              <img src="{{ r.profile_photo_url }}" alt="{{ r.author_name }}" class="avatar">
+            {% endif %}
+            <div>
+              <div class="author">{{ r.author_name }}</div>
+              <div class="stars small">
+                {% for i in "12345" %}
+                  {% if forloop.counter <= r.rating %}
+                    ★
+                  {% else %}
+                    ☆
+                  {% endif %}
+                {% endfor %}
+              </div>
+              <div class="time">{{ r.relative_time }}</div>
+            </div>
+          </div>
+          <p class="review-text">{{ r.text }}</p>
+        </article>
+      {% empty %}
+        <p>No reviews yet — check back soon!</p>
+      {% endfor %}
+    </div>
+  {% endif %}
+</section>
