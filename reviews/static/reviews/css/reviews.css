@@ -52,6 +52,17 @@
   margin-bottom: 0.5rem;
 }
 
+.reviews-empty {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+
 .avatar {
   width: 36px; height: 36px;
   border-radius: 50%;
