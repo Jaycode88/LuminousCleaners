@@ -73,3 +73,13 @@
   color: #07B0F2;
   border: 2px solid #07B0F2;
 }
+
+/* Honey pot field */
+.hp-wrap {
+  position: absolute;
+  left: -10000px; /* off-screen but present */
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
