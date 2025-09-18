@@ -9,3 +9,69 @@
 body {
   font-family: 'Roboto', sans-serif;
 }
+
+/* Cookie Banner */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  border-top: 2px solid #07B0F2;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  z-index: 1000;
+  font-family: 'Roboto', sans-serif;
+}
+
+.cookie-banner p {
+  margin: 0;
+  color: black;
+  flex: 1 1 60%;
+}
+
+.cookie-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.cookie-buttons .btn {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+}
+
+/* Django Messages */
+.messages {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 2000;
+}
+
+.message {
+  padding: 1rem 1.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 5px;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+  animation: fadeout 5s forwards;
+}
+
+.message.success {
+  background: #07B0F2;
+  color: white;
+}
+
+.message.error {
+  background: #f44336;
+  color: white;
+}
+
+@keyframes fadeout {
+  0% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-20px); }
+}

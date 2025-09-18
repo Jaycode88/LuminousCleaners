@@ -6,23 +6,57 @@
 
   <div class="contact-card">
     <p class="contact-intro">Please complete the form to receive your free quote</p>
-    <form method="post">
+
+    <form method="post" id="contact-form" novalidate>
       {% csrf_token %}
-      {{ form.as_p }}
-      
+
+      <!-- Honeypot (do NOT use display:none; hide visually but keep in DOM) -->
+      <div class="hp-wrap">
+        <label for="id_hp_subject">Subject</label>
+        {{ form.hp_subject }}
+      </div>
+
+      <!-- Timing field -->
+      {{ form.form_start_ts }}
+
+      <!-- Your actual inputs (render manually or {{ form.as_p }}): -->
+      {{ form.full_name.errors }}<label>Full Name</label>{{ form.full_name }}
+      {{ form.email.errors }}<label>Email Address</label>{{ form.email }}
+      {{ form.phone.errors }}<label>Phone Number</label>{{ form.phone }}
+
+      <label>Property Type</label>{{ form.property_type }}
+      <label>Service Required</label>{{ form.service_required }}
+      <label>Property Size</label>{{ form.property_size }}
+      <label>Frequency</label>{{ form.frequency }}
+
+      <label>Postcode</label>{{ form.postcode }}
+      <label>Additional Details</label>{{ form.additional_details }}
+
       <!-- reCAPTCHA -->
-      <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
-      
+      <div class="g-recaptcha" data-sitekey="{{ RECAPTCHA_SITE_KEY }}"></div>
+
       <p class="contact-terms">
         By sending this message, you agree to our
         <a href="#">Terms & Conditions</a> and
         <a href="#">Privacy Policy</a>.
       </p>
-      
+
+      <div id="form-warning" class="form-warning" style="display:none;">
+        To help prevent spam, please accept cookies to enable extra protection.
+      </div>
+
       <div class="contact-buttons">
-        <button type="submit" class="btn primary-btn">Send Form</button>
+        <button id="contact-submit" type="submit" class="btn primary-btn">Send Form</button>
         <button type="reset" class="btn secondary-btn">Clear Form</button>
       </div>
     </form>
   </div>
 </section>
+
+<script>
+  // set form start timestamp (for timing check)
+  document.addEventListener('DOMContentLoaded', function () {
+    const ts = document.querySelector('input[name="form_start_ts"]');
+    if (ts) ts.value = (Date.now() / 1000).toString();
+  });
+</script>

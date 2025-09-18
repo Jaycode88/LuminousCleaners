@@ -19,7 +19,29 @@
 
   </head>
 <body>
+  {% if messages %}
+    <div class="messages">
+      {% for message in messages %}
+        <div class="message {{ message.tags }}">{{ message }}</div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
   {% block content %}{% endblock %}
+
+  <!-- Cookie Consent Banner -->
+<div id="cookie-banner" class="cookie-banner">
+  <p>
+    We use cookies to improve your experience and to protect the contact form with Google reCAPTCHA.
+    <a href="/privacy-policy">Learn more</a>.
+  </p>
+  <div class="cookie-buttons">
+    <button id="cookie-accept" class="btn primary-btn">Accept All</button>
+    <button id="cookie-reject" class="btn secondary-btn">Reject Non-Essential</button>
+  </div>
+</div>
+
   <script src="{% static 'js/gallery.js' %}"></script>
+  <script src="{% static 'js/cookies.js' %}"></script>
 </body>
 </html>
